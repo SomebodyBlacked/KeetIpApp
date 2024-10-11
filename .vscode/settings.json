@@ -1,5 +1,6 @@
 {
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "vscode-icons",
+  "window.autoDetectColorScheme": false,
   "workbench.colorTheme": "One Dark Pro Darker",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[nix]": {
