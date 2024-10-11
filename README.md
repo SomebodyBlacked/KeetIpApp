@@ -8,10 +8,10 @@ This repository contains the source code for the KeetIp application, including t
 
 The project is structured into two main parts:
 
-* **frontend/:** Contains the user interface and logic for interacting with the application.
-* **backend/:** Handles data storage, retrieval, and processing.
+- **frontend/:** Contains the user interface and logic for interacting with the application.
+- **backend/:** Handles data storage, retrieval, and processing.
 
 ## Built With
 
-* **Frontend:** Preact, ViteJS, TailwindCSS
-* **Backend:** Node, Express
+- **Frontend:** [Preact](https://preactjs.com), [ViteJS](https://vite.dev), [TailwindCSS](https://tailwindcss.com)
+- **Backend:** [Node](https://nodejs.org/en), [Express](https://expressjs.com)
