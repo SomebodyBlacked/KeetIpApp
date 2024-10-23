@@ -19,7 +19,7 @@
       };
     };
     previews = {
-      enable = true;
+      enable = false;
       previews = {
         web = {
           command = [ "npm" "run" "dev" "--prefix" "./frontend" "--" "--port" "$PORT" ];
