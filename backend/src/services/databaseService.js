@@ -1,3 +1,4 @@
+import "dotenv/config";
 import sdk from "node-appwrite";
 import client from "./appwrite.js";
 
@@ -6,7 +7,7 @@ export const databases = new sdk.Databases(client);
 export let principalDatabase;
 export let notesCollection;
 
-async function prepareDatabase() {
+export async function prepareDatabase() {
   principalDatabase = await databases.create(sdk.ID.unique(), "KeetIpAppDb");
 
   notesCollection = await databases.createCollection(
@@ -32,4 +33,14 @@ async function prepareDatabase() {
   );
 }
 
-prepareDatabase();
+async function fetchDatabase() {
+  principalDatabase = await databases.get(
+    process.env.APPWRITE_PRINCIPAL_DATABASE_ID
+  );
+  notesCollection = await databases.getCollection(
+    principalDatabase.$id,
+    process.env.APPWRITE_NOTES_COLLECTION_ID
+  );
+}
+
+fetchDatabase();
