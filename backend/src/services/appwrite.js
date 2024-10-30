@@ -5,7 +5,7 @@ const client = new sdk.Client();
 
 client
   .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject(process.env.APPWRITE_PROJECT_ID)
-  .setKey(process.env.APPWRITE_APIKEY);
+  .setProject(process.env.KEETIPAPP_APPWRITE_PROJECT_ID)
+  .setKey(process.env.KEETIPAPP_APPWRITE_APIKEY);
 
 export default client;

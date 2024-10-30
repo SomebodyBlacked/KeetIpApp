@@ -35,11 +35,11 @@ export async function prepareDatabase() {
 
 async function fetchDatabase() {
   principalDatabase = await databases.get(
-    process.env.APPWRITE_PRINCIPAL_DATABASE_ID
+    process.env.KEETIPAPP_APPWRITE_PRINCIPAL_DATABASE_ID
   );
   notesCollection = await databases.getCollection(
     principalDatabase.$id,
-    process.env.APPWRITE_NOTES_COLLECTION_ID
+    process.env.KEETIPAPP_APPWRITE_NOTES_COLLECTION_ID
   );
 }
 
