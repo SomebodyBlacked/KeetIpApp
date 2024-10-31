@@ -63,4 +63,40 @@ notesRouter.post("/notes", async (req, res) => {
   }
 });
 
+notesRouter.put("/notes/:id", async (req, res) => {
+  const { id } = req.params;
+  const { title, content } = req.body;
+  const updatedNote = { title, content };
+
+  try {
+    await databases.updateDocument(
+      principalDatabase.$id,
+      notesCollection.$id,
+      id,
+      updatedNote
+    );
+    res.json({
+      title: updatedNote.title,
+      content: updatedNote.content,
+    });
+  } catch {
+    return res.status(404).json({ error: "Note not found" });
+  }
+});
+
+notesRouter.delete("/notes/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await databases.deleteDocument(
+      principalDatabase.$id,
+      notesCollection.$id,
+      id
+    );
+    res.status(204).send();
+  } catch {
+    return res.status(404).json({ error: "Note not found" });
+  }
+});
+
 export default notesRouter;
