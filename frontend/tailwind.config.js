@@ -6,13 +6,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,jsx}"
   ],
-  theme: {
-    extend: {},
-  },
   plugins: [
     daisyui,
   ],
   daisyui: {
-    themes: ["light"],
+    themes: ["garden"],
   }
 }

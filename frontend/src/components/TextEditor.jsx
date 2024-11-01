@@ -16,23 +16,25 @@ const TextEditor = () => {
   };
 
   return (
-    <div>
-      <ReactQuill
-        theme="snow"
-        formats={["header", "bold", "italic", "underline", "list", "link"]}
-        modules={modules}
-        placeholder="Write something idk man..."
-        preserveWhitespace={true}
-        style={{
-          height: "70vh",
-        }}
-        onChange={function (x) {
-          console.log(x);
-          return setContent(x);
-        }}
-        value={content}
-      />
-    </div>
+    <ReactQuill
+      theme="snow"
+      formats={["header", "bold", "italic", "underline", "list", "link"]}
+      modules={modules}
+      placeholder="Write something idk man..."
+      preserveWhitespace={true}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        width: "100%",
+        height: "100%",
+      }}
+      onChange={function (x) {
+        console.log(x);
+        return setContent(x);
+      }}
+      value={content}
+    />
   );
 };
 
