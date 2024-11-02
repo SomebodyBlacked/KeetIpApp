@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PREFIXES="^(\(backend\)|\(frontend\)|\(config\)) "
+PREFIXES="^(\(backend\)|\(frontend\)|\(config\)|\(both\)) "
 
 if ! grep -qE "^($PREFIXES)" "$1"; then
     echo "The commit message must start with one of the following prefixes: $PREFIXES" >&2
