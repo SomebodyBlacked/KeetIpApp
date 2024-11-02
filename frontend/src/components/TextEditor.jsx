@@ -4,12 +4,13 @@ import "react-quill/dist/quill.snow.css";
 
 const TextEditor = () => {
   const id = "67268e66e6fb533ad61b";
-  const title = "My first note";
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
   useEffect(async () => {
     const res = await fetch(`http://localhost:3001/notes/${id}`);
     const data = await res.json();
+    setTitle(data.title);
     setContent(data.content);
   }, []);
 
@@ -35,15 +36,24 @@ const TextEditor = () => {
 
   return (
     <>
-      <button className="btn btn-primary" onClick={saveContent}>
-        Save on cloud
-      </button>
+      <div className="flex w-full gap-8">
+        <input
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="input input-bordered input-primary w-full flex-1"
+        />
+        <button className="btn btn-primary" onClick={saveContent}>
+          Save on cloud
+        </button>
+      </div>
       <div className="my-4"></div>
       <ReactQuill
         theme="snow"
         formats={["header", "bold", "italic", "underline", "list", "link"]}
         modules={modules}
-        placeholder="Write something idk man..."
+        placeholder="Write something interesting man, idk, just write something cool"
         preserveWhitespace={true}
         style={{
           display: "flex",
