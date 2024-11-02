@@ -10,6 +10,6 @@ export default {
     daisyui,
   ],
   daisyui: {
-    themes: ["garden"],
+    themes: ["garden", "forest"],
   }
 }
