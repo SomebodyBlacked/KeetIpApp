@@ -54,6 +54,7 @@ notesRouter.post("/notes", async (req, res) => {
       newNote
     );
     res.status(201).json({
+      id: createdNote.$id,
       title: createdNote.title,
       content: createdNote.content,
     });

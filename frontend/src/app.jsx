@@ -9,7 +9,7 @@ export default function App() {
           <ul className="menu menu-horizontal"></ul>
         </div>
       </div>
-      <div className="container self-center py-8 px-8 w-full">
+      <div className="py-8 px-8">
         <TextEditor />
       </div>
     </>
